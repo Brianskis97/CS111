@@ -10,9 +10,8 @@ public class CD extends Audio{
 		
 	}
 	
-	public void playMedia(int track){
+	public void playMedia(){
 		super.playMedia();
-		System.out.println("Track" + "(" + track + "): " + tracks[track]); 
 	}
 	
 	public String toString(){

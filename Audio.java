@@ -27,7 +27,7 @@ abstract class Audio extends Media{
 		
 		return(super.toString() + "\n"
 		+ "Group Members"+"("+numMembers+"): " + output + "\n"
-		+"Producer: " + producer);
+		+"Producer: " + producer.getFullName());
 	}
 	
 }
