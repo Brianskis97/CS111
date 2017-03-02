@@ -1,11 +1,11 @@
 abstract class Video extends Media{
 	
-	private String supportingactors[];
+	private Artist supportingactors[];
 	private int numActors;
-	private String director;
+	private Artist director;
 	private String rating;
 	
-	public Video(String titlein, Artist artin, double timein, String[] supactin, int numactin, String direcin, String ratin){
+	public Video(String titlein, Artist artin, time timein, Artist[] supactin, int numactin, Artist direcin, String ratin){
 		 super(titlein, artin, timein);
 		 supportingactors = supactin;
 		 director = direcin;
@@ -21,17 +21,17 @@ abstract class Video extends Media{
 		String output = "";
 		for (int i = 0; i<supportingactors.length; i++){
 			if(i < supportingactors.length-1){
-				output = output + supportingactors[i] + ", ";
+				output = output + supportingactors[i].getFullName() + ", ";
 			}
 			else{
-				output = output + supportingactors[i];
+				output = output + supportingactors[i].getFullName();
 			}
 		}
 				
 		return (super.toString() + "\n"
 		+ "Supporting Actors: " + output + "\n"
 		+ "Number of Actors: " + numActors + "\n"
-		+ "Director: " + director + "\n"
+		+ "Director: " + director.getFullName() + "\n"
 		+ "Rating: " + rating);
 	}
 	

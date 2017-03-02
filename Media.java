@@ -2,11 +2,11 @@ abstract class Media{
 	
 	private String title;
 	private Artist majorArtist;
-	private double playingTime;
+	private time playingTime;
 	private int numPlays = 0;
 	
 	
-	public Media(String titlein, Artist artin, double timein){
+	public Media(String titlein, Artist artin, time timein){
 		title = titlein;
 		majorArtist = artin;
 		playingTime = timein;
@@ -15,7 +15,7 @@ abstract class Media{
 	public void playMedia(){
 		numPlays = numPlays + 1;
 		System.out.println("Now Playing: " + title + "\n" 
-		+ "Playing Time: " + playingTime);
+		+ "Playing Time (h:m:s):  " + playingTime.toString());
 	}
 	
 	public String getTitle(){
@@ -26,7 +26,7 @@ abstract class Media{
 		return numPlays;
 	}
 	
-	public double getPlayingTime(){
+	public time getPlayingTime(){
 		return playingTime;
 	}
 	
@@ -36,8 +36,8 @@ abstract class Media{
 	
 	public String toString(){
 		return("Title: " + title + "\n"
-		+ majorArtist.toString() + "\n"
-		+ "Playing Time: " + playingTime + "\n"
+		+ "Major Artist: " + majorArtist.getFullName() + "\n"
+		+ "Playing Time(h:m:s): " + playingTime.toString() + "\n"
 		+ "Number of Plays: " + numPlays
 		);
 	}

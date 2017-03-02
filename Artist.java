@@ -35,6 +35,10 @@ public class Artist{
 	public String getLastName(){
 		return last;
 	}
+	
+	public String getFullName(){
+		return first + " " + last;
+	}
 		
 	
 }

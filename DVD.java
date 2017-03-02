@@ -10,7 +10,7 @@ public class DVD extends Video{
 	// Input: String Title, Artist artist, double Playtime, String[] supporting actors, int number of supporting actors, 
 	// String director, String rating, String[] SpecialFeatures, int number of special features,
 	// boolean is there widescren, boolean is there tv format, String[] soundOptions, int number of sound options
-	public DVD(String titlein, Artist artin, double timein, String[] supactin, int numactin, String direcin, String ratin
+	public DVD(String titlein, Artist artin, time timein, Artist[] supactin, int numactin, Artist direcin, String ratin
 	 , String[] specialin, int featuresin, boolean wideScreenFormatin, boolean TVFormatin,
 	 String[] soundOptionsin,  int numSoundOptionsin){
 		 super(titlein, artin, timein, supactin, numactin, direcin, ratin);
