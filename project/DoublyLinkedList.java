@@ -17,41 +17,30 @@ public class DoublyLinkedList<T extends Comparable>{
 	}
 
 	public void insert(T d){
+		
 		if(head.next==null){
-			head.next = new Node<T>(d, head, null);
-			current = head.next;
+			head.next = new Node<T>(d, head, head);
+			head.prev = head.next;
 			size++;
 		}
 		else{
-			boolean flag = true;
-			Node<T> temp = head.next;
-			
-			while(flag){
-				if(temp.next != null && (d.compareTo(temp.next.data) > 0)){
-					temp.next = new Node(temp.next.data, temp.next, temp.next.next);
-					System.out.println("This part Doesnt work does it?");
+			current = head.next;
+			for(int i = 0; i<size; i++){
+				if((current.data != null) && current.data.compareTo(d)>0){
+					current.next = new Node<T>(d, current, current.next);
+					break;
 				}
-				else if(temp.next== null){
-					temp.next = new Node(d, temp, null);
-					flag = false;
-				}
-				else{
-					temp.next = new Node<T>(d, temp, temp.next);
-					flag = false;
-					System.out.println("doot");
-				} 
-				//System.out.println("The loop is here!");
-				
+				current = current.next;
 			}
-		head.next = temp;
-		size++;				
+			size++;
 		}
+				
 	}
 
 	public String toString(){
 		String output = "";
 		Node<T> temp = head.next;
-		while(temp!=null){			
+		for (int i = 0; i<size; i++){			
 			output = output + temp.data + "-";
 			temp = temp.next;
 		}

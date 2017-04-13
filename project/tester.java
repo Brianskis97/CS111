@@ -5,7 +5,7 @@ public class tester{
 		test.insert(3);
 		test.insert(4);
 		test.insert(5);
-		//test.insert(2);
+		test.insert(2);
 		System.out.println(test.toString());
 	}
 }
