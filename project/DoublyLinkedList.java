@@ -26,8 +26,12 @@ public class DoublyLinkedList<T extends Comparable>{
 		else{
 			current = head.next;
 			for(int i = 0; i<size; i++){
-				if((current.data != null) && current.data.compareTo(d)>0){
-					current.next = new Node<T>(d, current, current.next);
+				if((current.data == null && current != head)){
+					current = new Node<T>(d, current, current.next);
+					break;
+				}
+				else if(current.data != null && current.data.compareTo(d)>0){
+					current = new Node<T>(d,current,current.next);
 					break;
 				}
 				current = current.next;
